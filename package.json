@@ -1,12 +1,24 @@
 {
-  "name": "node-boilerplate",
+  "name": "cra-client-server",
   "version": "0.1.0",
-  "description": "",
-  "main": "index.js",
+  "description": "A template with a React front end using Create React App and a back end Express server",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "concurrently \"npm run start:client\" \"npm run start:server\"",
+    "start:client": "cd ./client && npm run start",
+    "start:server": "cd ./server && npm run dev",
+    "test": "echo \"To run tests, execute npm run test in either the client or server directory\" && exit 1"
   },
-  "keywords": [],
+  "keywords": [
+    "react",
+    "create-react-app"
+  ],
   "author": "Kurt Stephens <kstephens6054@gmail.com> (https://github.com/kstephens6054)",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "client": "file:client",
+    "server": "file:server"
+  },
+  "devDependencies": {
+    "concurrently": "^6.0.0"
+  }
 }
